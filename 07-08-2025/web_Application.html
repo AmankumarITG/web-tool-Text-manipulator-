@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXT manipulator</title>
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
+    <style>
+.inner{
+height: 100px;
+width: 400px;
+padding: 10px 40px;
+border: 2px solid aquamarine;
+background-color: antiquewhite;
+font-size: 20px;
+}
+.input{
+    height:40px;
+    width:300px;
+    margin-bottom: 30px;
+    padding:10px;
+    background: oldlace;
+}
+button{
+    color:goldenrod;
+    padding:5px 10px;
+    background-color: gray;
+    border:1px solid gold;
+    margin-right:10px;
+}
+.input::placeholder{
+    color:black;
+    font-weight: 700;
+    font-size: 16px;
+}
+.input-section{
+    position: absolute;
+    z-index: 5;
+    left : 500px;
+    top : 190px;
+}
+body{
+    background-image: url("images/best-background.png");
+    position: relative;
+    /* background-repeat: no-repeat;
+    background-position:center ;
+    width: 1300px; */
+}
+#favcolor{
+height:30px;
+width:50px;
+}
+#bold{
+font-weight: 900;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <input type="text" class="input" value="" placeholder="text"><br>
+            <button onclick="change()">UPPERCASE</button>
+            <button onclick="change1()">lowerCase</button>
+            <button onclick="change2()" id="bold">Bold</button>
+           <input onchange="color()" type="color" id="favcolor" name="favcolor" value="#000000">
+            <button onclick="change3()">Capitalize</button>
+            <button onclick="change4()"><i>Italic</i></button>
+            <p class="inner">
+        </p>
+        </div>
+        
+    </div>
+    <script>
+// 📄 Problem Statement:
+// Create a simple web-based application that allows a user to input any text and perform a variety 
+// of text formatting and manipulation operations. The transformed output must be displayed in a 
+// separate area below the input. The user should be able to choose multiple formatting options like:
+// Bold
+// Italic
+// Uppercase
+// Lowercase
+// Change Text Color
+// Capitalize Each Word (Uppercase Each First Letter)
+// ✅ Requirements:
+// 1. Basic Layout (Using HTML):
+// One input box (<textarea> or <input type="text">) to enter the original text
+// A group of buttons or checkboxes for different operations:
+// Bold
+// Italic
+// UPPERCASE
+// lowercase
+// Capitalize Each Word
+// Change Color (you can use a dropdown or color picker)
+// A Submit or Apply button to process the text
+// One output area (<div> or <textarea>) to show the result
+// Hinglish labels (Example: "Yahan Text Likho" for input, "Yeh Hai Output" for result)
+// 2. CSS Styling:
+// Make the layout neat and user-friendly
+// Use a pleasant font and padding
+// Responsive design is a bonus (works on mobile)
+// 3. JavaScript Functionality:
+// Detect what options the user has selected
+// Apply all selected text transformations to the input
+// Display the final output dynamically
+// 🌟 Bonus (Optional Features):
+// Reset/Clear button
+// Allow live preview (as user types)
+// Word count or character count
+// Light/Dark theme toggle
+
+function change(){
+    if(document.querySelector(".inner").innerText !== document.querySelector(".input").value.toUpperCase()
+|| document.querySelector(".inner").style.fontWeight !== "400"){
+         document.querySelector(".inner").innerText = document.querySelector(".input").value.toUpperCase(); 
+         document.querySelector(".inner").style.fontWeight = "400" ;
+    }
+    else{
+        document.querySelector(".inner").innerText = "";
+    }
+}
+function change1(){
+    if(document.querySelector(".inner").innerText !== document.querySelector(".input").value.toLowerCase() 
+    || document.querySelector(".inner").style.fontWeight !== "400" ){
+         document.querySelector(".inner").innerText = document.querySelector(".input").value.toLowerCase();  
+         document.querySelector(".inner").style.fontWeight = "400" ;
+    }
+    else{
+        document.querySelector(".inner").innerText = "";
+    }
+}
+function change2(){
+    if(document.querySelector(".input").style.fontWeight !== 900 &&
+     document.querySelector(".inner").innerText !== document.querySelector(".input").value){
+     document.querySelector(".inner").innerText =  document.querySelector(".input").value;
+     document.querySelector(".inner").style.fontWeight = "900";
+    }
+    else{
+        document.querySelector(".inner").innerText = "";
+    }
+}
+function color(){
+    document.querySelector(".inner").style.color = document.querySelector("#favcolor").value;
+}
+function change3(){
+    let str = '';
+    let arr = document.querySelector(".input").value.trim().split(" ");
+    for(let x of arr){
+      let bda =  x[0].toUpperCase();
+      let orig = bda + x.slice(1);
+      str += " " + orig;
+    }
+ if(document.querySelector(".inner").innerText !== str && document.querySelector(".inner").innerText === ""){
+      document.querySelector(".inner").innerText = str;
+      document.querySelector(".inner").style.fontStyle = "normal"
+ }
+else{
+     document.querySelector(".inner").innerText = "";
+}
+}
+function change4(){
+    let a = document.querySelector(".input").style.fontStyle;
+    if(a !== "italic" && document.querySelector(".inner").innerText === ""){
+      document.querySelector(".inner").innerText = document.querySelector(".input").value;
+      document.querySelector(".inner").style.fontStyle = "italic";
+    }
+    else{
+     document.querySelector(".inner").innerText = "";
+}
+}
+</script>
+</body>
+</html>
