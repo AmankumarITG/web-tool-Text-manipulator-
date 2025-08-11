@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptEngineering</title>
+    <link rel="icon" type="image/x-icon" href="images/Prompt Engineer.png">
+    <style>
+*{
+    padding:0;
+    margin:0;
+}
+.black{
+    background-color: black;
+}
+.white{
+    background-color: white;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding:20px 0;
+    background: inherit;
+    border-bottom: black;
+}
+.header1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding:20px 0;
+    background: black;
+    border-bottom: white;
+}
+
+.ul{
+display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:40px;
+    list-style: none;
+}
+.logo1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border:1px solid black;
+    border-radius: 50%;
+    background:black;
+}
+.logo{
+color:aqua;
+}
+span{
+    color: wheat;
+    opacity:0.37;
+}
+.button{
+    background: black;
+    color:wheat;
+    font-weight: 700;
+    font-size: 16px;
+padding: 10px 15px;
+border: 2px solid pink;
+border-radius: 30px;
+}
+.button1{
+    background: wheat;
+    color:black;
+    font-weight: 700;
+    font-size: 16px;
+padding: 10px 15px;
+border: 2px solid gray;
+border-radius: 30px;
+}
+.nav-link{
+    text-decoration: none;
+    color:aqua;
+    font-size: 20px;
+    font-weight: 700;
+}
+/* .night , .day{
+ 
+} */
+.para{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-right: 150px;
+    background-color: white;
+}
+.para1{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-right: 150px;
+    background-color: black;
+    color:white;
+}
+.night {
+  background-image: url("images/night.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+     width:1200px;
+    height:700px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.day{
+ background-image: url("images/day.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+     width: 1200px;
+    height:700px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+.pop{
+position : absolute;
+right:440px;
+z-index: 5;
+text-align: center;
+bottom : 420px;
+background: gold;
+padding:30px 40px;
+border: 1px solid pink;
+border-radius: 40px;
+    display:none;
+}
+#typer{
+color:black;
+font-size: 40px;
+font-weight: 700;
+background: peachpuff;
+}
+#typer1{
+    color:white;
+font-size: 40px;
+font-weight: 700;
+background: blueviolet;
+}
+.pop p {
+    font-size: 20px;
+    font-weight: 600;
+    color: blueviolet;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+    </style>
+</head>
+<body class="white">
+    <div class="container"> 
+    <div class="header">
+        <div class="logo1">
+            <a href="#"><img src="images/Prompt Engineer.png" alt="PromptEngineering"></a>
+            <h2 class="logo">PROMPT ENGINEER<SPAN>(AMAN)</SPAN></h2>
+        </div>
+    <nav>
+    <ul class="ul">
+    <li><a href="#" class="nav-link">Menu</a></li>
+    <li><a href="#" class="nav-link">About</a></li>
+    <li><button onclick="changes()" class="button">DARK</button></li>
+    </ul>
+    </nav>
+    </div>
+    <div>
+        <div class="day">
+            <p class="para">
+                i am <span id="typer"></span>
+            </p>
+        </div>
+       
+        <div class="pop">
+<p>Aapka ati swagatam!<br> aaiye website explore karte hain</p>
+        </div>
+    </div>
+    
+    </div>
+    <script>
+      const names = [
+            "engineer",
+            "coder",
+            "developer"
+        ]
+        const typer = document.getElementById("typer");
+        let i = 0;
+        let n = names.length;
+        setInterval(() => {
+            let word = names[i];
+            let j = 0;
+            const value = setInterval(() => {
+                if (j < word.length) {
+                    typer.innerText = typer.innerText.slice(0, -1)
+                    typer.innerText += word[j];
+                    typer.innerText += "|"
+                }
+                else {
+                    stopinterval();
+                }
+                function stopinterval() {
+                    clearInterval(value)
+                }
+                j++;
+            }, 100);
+            i++;
+            i = i % n;
+            typer.innerText = "";
+        }, 2000);
+
+
+function changes(){
+    if(document.body.classList.contains("white")){
+       document.body.classList.add("black");
+    document.body.classList.remove("white");
+    // document.querySelector(".para").classList.add("para1");
+    //     document.querySelector(".para").classList.remove("para1");
+    document.querySelector(".para").setAttribute("class","para1");
+    document.querySelector(".day").setAttribute("class","night");
+    document.querySelector(".button").innerHTML = "Light"
+document.querySelector(".button").setAttribute("class","button1");
+document.querySelector("#typer").setAttribute("id","typer1");
+    }
+    else{
+        document.body.classList.add("white");
+        document.body.classList.remove("black");
+        document.querySelector(".para1").setAttribute("class","para");
+            document.querySelector(".night").setAttribute("class","day");
+            document.querySelector(".button1").innerHTML = "Dark";
+          document.querySelector(".button1").setAttribute("class","button");
+document.querySelector("#typer1").setAttribute("id","typer");
+    }
+}
+setTimeout(() =>{
+document.querySelector(".pop").style.display = "block"
+},3*10**3);
+setTimeout(()=>{
+  document.querySelector(".pop").style.display = "none"  
+},6000)
+    </script>
+</body>
+</html>

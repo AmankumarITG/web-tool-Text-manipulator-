@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input  type="text" class="keyup">
+    <p id="keyup"></p>
+    <script>
+//  Input Field Mein Typing Detect Karo
+//  Input box banao jo har key press (keyup) par current text
+//  ko ek <p> tag mein live dikhaye.
+let alpha = document.querySelector(".keyup");
+alpha.addEventListener("keyup",()=>{
+    document.getElementById("keyup").innerText = alpha.value
+})
+    </script>
+</body>
+</html>

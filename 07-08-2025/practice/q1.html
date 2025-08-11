@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+.span{
+    color:red;
+    font-size: 14px;
+    font-weight: 900;
+    margin-left: 5px;
+}
+    </style>
+</head>
+<body>
+    <div class="body">
+        <p class="para"></p>
+    <span class="span"></span>
+    </div>
+    
+    <button class="but">click me!</button>
+    <script>
+//         Button Click pe Text Change karo
+//  Ek button banao, jise click karne pe ek paragraph
+//  ka text "Hello World!" se "Button Clicked!" ho jaye.
+let count = 0;
+function change(){
+    count++;
+    document.querySelector(".para").innerText = "Button Clicked :";
+    document.querySelector(".para").style.border = "1px solid yellow"
+    document.querySelector(".span").innerText = `${count} times`;
+}
+let but = document.querySelector(".but");
+but.addEventListener("onclick",change)
+
+
+    </script>
+</body>
+</html>

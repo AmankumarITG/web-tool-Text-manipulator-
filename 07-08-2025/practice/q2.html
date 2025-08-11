@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 100px;
+        }
+#box{
+    height:300px;
+    width:300px;
+    background-color: aqua;
+}
+    </style>
+</head>
+<body><div id="box" onmouseout="hta()" onmouseover="lga()"></div>
+    <script>
+//   Mouse Over se Background Color Badlo
+//  Ek div par mouse le jaane par uska background color change ho jaye,
+//   aur mouse hatate hi wapas original ho jaye.
+function lga(){
+    document.querySelector("#box").style.background = "green";
+}
+function hta(){
+    document.querySelector("#box").style.background = "aqua";
+}
+    </script>
+
+</body>
+</html>

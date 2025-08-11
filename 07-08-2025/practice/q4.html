@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="double">the text</p>
+    <script>
+//  Double Click se Font Size Badhayein
+//  Ek text element ho jo double-click karne par uska font size bada ho jaye.
+let word = document.querySelector(".double")
+word.addEventListener("dblclick",()=>{
+    if(word.style.fontSize !== "30px"){
+        word.style.fontSize = "30px";
+}
+else{
+word.style.fontSize = "14px";
+}
+})
+    </script>
+</body>
+</html>

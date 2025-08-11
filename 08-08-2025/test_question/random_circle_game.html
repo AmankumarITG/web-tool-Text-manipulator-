@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Circle Game</title>
+    <link rel="stylesheet" href="random.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="max-width">
+            <div class="game-layout">
+<h1>🧭 Click To Start The Circle Game 🧭</h1>
+<button class="start-button" onclick="start_circle()">Start Game</button>
+<div class="flex"><p>Score : </p><span class="score"></span></div>
+<div class="flex"><p>Time Left : </p><span class="time"></span></div>
+<div class="circle-container">
+<div class="circle" onclick="onclick_circle()"></div>
+</div>
+            </div>
+        </div>
+    </div>
+    <script src="random.js"></script>
+</body>
+</html>

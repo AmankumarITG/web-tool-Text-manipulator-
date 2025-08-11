@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="#">
+<input type="text" id="name" placeholder="name">
+<button class="but">submit</button>
+</form>
+    <script>
+// Form Submit Hone Par Alert Dikhao
+//  Ek simple form banao jisme naam input ho. 
+// Submit karne pe alert aaye: "Hello [naam]!"
+const but = document.querySelector(".but");
+ const pop = () => {
+    alert(`Hello ${document.querySelector("#name").value}!`);
+}
+but.addEventListener("click",pop);
+    </script>
+</body>
+</html>

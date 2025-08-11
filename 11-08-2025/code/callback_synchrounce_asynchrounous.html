@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="tab"></p>
+    <script>
+// let text =  document.querySelector(".para");
+const decorate = (streeng) =>{
+text.innerText = streeng;
+}
+const semi = (sting,a)=>{
+    a(sting)
+}
+const table = (num) =>{
+    const text =  document.querySelector("#tab")
+    for(let i = 1 ;i<=10;i++){
+        text.innerText += `${num} X ${i} = ${num * i} \n`;
+    }
+}
+semi(5,table);
+    </script>
+</body>
+</html>

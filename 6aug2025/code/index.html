@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>TO-DO LIST</h1>
+        <input type="text" id="get">
+        <button onclick="changes()">Add</button>
+          
+<div id="to-do">
+        
+    </div>
+
+    
+    <script>
+// append child and create element
+    let i = 1;
+    let ad = [];
+function changes(){
+    let a = document.getElementById("get").value;
+ let ele = document.createElement("p");
+ ad[i] = ele.setAttribute("id",`to-do${i}`)
+    if(a !==""){
+  ele.innerText = document.getElementById("get").value;
+  document.body.appendChild(ele);
+  i++;
+a = "";
+} 
+
+}
+    </script>
+</body>
+</html>

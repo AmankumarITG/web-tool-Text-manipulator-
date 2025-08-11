@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="but">start</button>
+    <script>
+//         Task 8: Stop Interval After Certain Condition
+// Goal: Tumhe ek interval start karna hai, aur usko
+//  kuch condition par stop karna hai. Steps:
+// setInterval se page ka background color har 1 second mein change karo.
+// 5 seconds ke baad, agar background color red ho gaya ho toh interval 
+// ko clearInterval se stop kar do.
+let arr  = ["green","yellow","black","blue","red"];
+let butt = document.getElementById("but");
+butt.addEventListener("click",()=>{
+    let i = 0;
+    let int = setInterval(()=>{
+document.body.style.background =` ${arr[i]}`;
+if(document.body.style.background === "red"){
+  setTimeout(()=>{
+        clearInterval(int);
+    },1000)
+}
+i++ ;
+    },1000);
+  
+})
+</script>
+</body>
+</html>

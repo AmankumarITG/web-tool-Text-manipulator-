@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" class="in">
+    <script>
+// Enter Key Press Pe Action Lo
+//  Input field mein agar user Enter dabaye ,
+//   toh console mein "Enter pressed!" print ho . 
+let inp = document.querySelector(".in");
+inp.addEventListener("keydown",(e)=>{
+    if(e.key == "Enter"){
+        console.log("Enter pressed!");
+        
+    }
+})
+    </script>
+</body>
+</html>

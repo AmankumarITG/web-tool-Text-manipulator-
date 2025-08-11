@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .spy{
+            height:190px;
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<img src="first.png" alt="first" id="img">
+    <script>
+//         Image Hover Zoom Effect (CSS + JS)
+//  Ek image ho, aur mouse le jaane par JS se
+//  uska size 1.2x zoom ho jaye.
+let image = document.getElementById("img");
+image.addEventListener("mouseover",()=>{
+    image.style.transform="scale(1.2)";
+})
+image.addEventListener("mouseout",()=>{
+    image.style.transform="scale(1)";
+})
+    
+    </script>
+</body>
+</html>

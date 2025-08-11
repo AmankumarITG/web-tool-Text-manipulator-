@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 30px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+    <p id="lyrics"></p>
+    <script>
+        const startButton = document.querySelector(".start");
+        const stopButton = document.querySelector(".stop");
+        const printLyrics = document.querySelector("#lyrics");
+        const lyrics = [
+            "Disco deewane",
+            "Aahaan ahaan",
+            "Disco deewane",
+            "Aahaan ahaan, ho",
+            "Nasheelee hai raat",
+            "Ho Haathon mein haath",
+            "Naache gaayein saath",
+            "Disco Deewane",
+            "Aahaan.. ahaan",
+            "(Dis-dis-dis disco beat)",
+            "(Dis-dis-dis disco beat)"
+        ];
+
+
+        // generate random color
+        const randonColor = () => {
+            const hax = '0123456789abcdef';
+            let color = "#"
+            for (let i = 0; i < 6; i++) {
+                color += hax[Math.floor(Math.random() * 16)]
+            }
+            return color
+        }
+        // star Disco LIght
+        let discoInterval;
+        let index = 0;
+        const startDiscoLight = () => {
+            startButton.disabled = true;
+            if (!discoInterval) {
+                discoInterval = setInterval(() => {
+                    document.body.style.background = `linear-gradient(${randonColor()} , ${randonColor()} , ${randonColor()})`;
+                      printLyrics.style.color = randonColor();
+                      printLyrics.innerText = lyrics[index];
+                      index++;
+                      if(index === lyrics.length){
+                        index = 0;
+                      }
+            index 
+                }, 1000);
+
+            }
+        }
+        const stopDiscoLight = () => {
+            clearInterval(discoInterval);
+            discoInterval = null;
+            startButton.disabled = false;
+        }
+        startButton.addEventListener("click", startDiscoLight);
+        stopButton.addEventListener("click", stopDiscoLight);
+    </script>
+</body>
+
+</html>
