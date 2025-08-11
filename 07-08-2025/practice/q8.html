@@ -6,15 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="checkbox" id="in">
+    <input type="checkbox" id="check">
     <script>
-//         Checkbox Select Hone Par Background Badlo
-//         Agar checkbox check ho toh poori body ka background 
-//         green ho jaye, uncheck hone par white ho jaye.
-let inp = document.querySelector("#in");
-inp.addEventListener("click",()=>{
-    if()
-})
+// Checkbox Select Hone Par Background Badlo
+// Agar checkbox check ho toh poori body ka
+// background green ho jaye
+// , uncheck hone par white ho jaye.
+let apka = document.querySelector("#check");
+apka.addEventListener("change",()=>{
+  if(apka.checked){
+    document.body.style.background = "green";
+  }
+  else{
+   document.body.style.background = "white" ;
+  }
+});
     </script>
 </body>
 </html>

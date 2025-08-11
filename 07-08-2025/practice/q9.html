@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#back{
+    height: 100px;
+    width: 100px;
+    background-color:white;
+}
+    </style>
+</head>
+<body>
+   <!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>Hello, World!</title> 
+    <link rel="stylesheet" href="styles.css" /> 
+  </head> 
+  <body> 
+    <div id="back"></div> 
+     <div class="dropdown"> 
+  <span>Color Choose Lijiye</span> 
+  <div class="dropdown-content"> 
+  <button id="b1">green</button> 
+    <button id="b2">yellow</button> 
+  <button id="b3">red</button> 
+  </div> 
+</div>
+      <script src="script.js"></script> 
+  </body> 
+</html>
+<script>
+// Dropdown Select Change Detect Karo
+// Ek dropdown ho (jaise color choose
+// karna), aur selection change hone par 
+// usi color se ek box ka background change ho jaye.
+let b1 = document.querySelector("#b1");
+let b2 = document.querySelector("#b2");
+let b3 = document.querySelector("#b3");
+let back = document.querySelector("#back");
+function colorb1(){
+back.style.color = `${b1.innerText}`;
+}
+function colorb2(){
+back.style.color = `${b2.innerText}`;
+}
+function colorb3(){
+back.style.color = `${b3.innerText}`;
+}
+b1.addEventListener("click",colorb1());
+b2.addEventListener("click",colorb2());
+b3.addEventListener("click",colorb3());
+</script>
+</body>
+</html>
